@@ -40,4 +40,17 @@ class Song
     genre_array
   end
 
+  def self.genre_count
+    total = 1
+    genre_hash = {}
+    @@genres.each do |brand|
+      if genre_hash.has_key?(brand)
+        genre_hash[brand] = total + 1
+      else
+        genre_hash[brand] = total
+      end
+    end
+    genre_hash
+  end
+
 end
